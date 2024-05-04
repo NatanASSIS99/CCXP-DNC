@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CCXP 2022</title>
+    <style>
+        body {
+    background-color: #FFD900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    padding: 15px;
+}
+
+#sec1 {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 50vw;
+    margin-top: 5px;
+    margin-left: -15px;
+}
+
+#desc {
+    text-align: center;
+    background-color: #514988;
+    color: white;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 32px;
+    padding-bottom: 30px;
+    height: 400px;
+}
+
+#titulo {
+    margin: 5px;
+    color: #FFD900;
+    font-size: 30px;
+}
+
+#data {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#conteudo {
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+#countdown {
+    display: grid;
+    grid-auto-flow: column;
+    text-align: center;
+    background-color: white;
+    margin-right: -15px;
+}
+
+.cd-item {
+    color: #514988;
+    font-size: 38px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#subtitulo {
+    background-color: white;
+    color: #E33881;
+    margin-top: -20px;
+    margin-bottom: -10px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+   
+}
+
+#video {
+    margin-right: -15px;
+    margin-bottom: -15px;
+    margin-top: 20px;
+    margin-left: 15px;
+    background-color: white;
+  
+    
+    Width: 650px
+
+}
+#paivid{
+    background-color: white;
+    
+}
+#compre {
+    display: grid;
+    grid-auto-flow: column;
+    background-color: white;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding-bottom: 150px;
+}
+
+#subtitulo-ing {
+    color: #FFD900;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+button {
+    background-color: #514988;
+    border-radius: 20px;
+    color: white;
+    margin: 30px;
+    width: 300px;
+    height: 70px;
+    font-size: 30px;
+    margin-top: 10rem;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #FFD900
+}
+#vd{background-color: white;
+    padding: 25px;
+}
+
+#aviso{
+    
+}
+       
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="logo.svg" alt="Logo CCXP" width="150px">
+    </header>
+
+    <section id="sec1">
+        <div id="desc">
+            <h1 id="titulo">REVIVA O ÉPICO</h1>
+            <p id="data"><strong>DE 10 A 14 DE DEZEMBRO</strong></p>
+            <p id="conteudo">Você consegue sentir? É aquela sensação de finalmente poder falar em voz alta: "estamos
+                em casa".
+                Sim, em dezembro de 2022, teremos a volta da CCXP física.
+                Mas não será qualquer CCXP, vai ser a maior de todos os tempos.
+                Prepare-se para visitar seus universos favoritos, explorar o Artists'
+                Valley, se emocionar nos auditórios e encontrar aventuras épicas a
+                cada passo pelos nossos corredores.</p>
+        </div>
+        <div id="paivid">
+            <div id="countdown">
+                <p class="cd-item" id="dia">Dias</p>
+                <p class="cd-item" id="hora">Horas</p>
+                <p class="cd-item" id="min">Minutos</p>
+                <p class="cd-item" id="seg">Segundos</p>
+            </div>
+            <div id="subtitulo">
+                <p><strong>PARA A MAIOR CCXP DE TODOS OS TEMPOS</strong></p>
+            </div>
+            <div id="video">
+                <video width="100%" controls loop>
+                    <source id="vd" src="Arlequina.mp4" type="video/mp4" >
+                </video>
+            </div>
+        </div>
+    </section>
+    <section id="compre">
+        <div>
+            <div id="subtitulo-ing">
+                <strong>AINDA DÁ TEMPO DE GARANTIR O SEU, MAS CORRE!</strong>
+            </div>
+            <div id="ingressos">
+                <img src="qui.svg" alt="Imagem Ingresso de Quinta Feira">
+                <img src="sex.svg" alt="Imagem Ingresso de Sexta Feira">
+                <img src="sab.svg" alt="Imagem Ingresso de Sabado">
+                <img src="dom.svg" alt="Imagem Ingresso de Domingo">
+            </div>
+        </div>
+        <div id="botao-compra">
+            <button>GARANTA O SEU!</button>
+        </div>
+    </section>
+
+    <script>
+        const dia = document.getElementById("dia");
+        const hora = document.getElementById("hora");
+        const minuto = document.getElementById("min");
+        const segundo = document.getElementById("seg");
+
+        const lancamento = "31 dec 2025";
+
+        function countdown() {
+            const dataLanc = new Date(lancamento);
+            const hoje = new Date();
+
+            const segTotal = (dataLanc - hoje) / 1000;
+            const dias = Math.floor(segTotal / 3600 / 24);
+            const horas = Math.floor((segTotal / 3600) % 24);
+            const minutos = Math.floor(segTotal / 60) % 60;
+            const segundos = Math.floor(segTotal % 60);
+
+            dia.innerHTML = `<strong>${dias}D</strong>`;
+            hora.innerHTML = `<strong>${horas}H</strong>`;
+            minuto.innerHTML = `<strong>${minutos}M</strong>`;
+            segundo.innerHTML = `<strong>${segundos}S</strong>`;
+        }
+
+        countdown();
+
+        setInterval(countdown, 1000);
+    </script>
+</body>
+
+</html>
