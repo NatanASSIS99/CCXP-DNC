@@ -1,0 +1,1 @@
+Projeto Lange Panding, motivado pela Escola DNC, Curso Fomaçãa em Tecnologia. Des. Full Stack. Objetivo do projeto foi aplicar os conhecimentos adquiridos no módulo de introdução ao Javascript. Projeto ainda requer estilização. 
